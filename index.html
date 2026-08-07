@@ -13,6 +13,37 @@
     <link rel="apple-touch-icon" href="icons/icon-192.png">
     <link rel="icon" type="image/png" href="favicon.png"/>
     <link rel="manifest" href="manifest.json">
+
+    <meta name="description" content="Free WebGL holographic background generator. Tweak domain-warped noise and cosine palettes in real time, then export as PNG or JPG.">
+    <link rel="canonical" href="https://holograthic.com/">
+    <meta name="theme-color" content="#7987F0">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://holograthic.com/">
+    <meta property="og:title" content="Holograthic | Iridescent background generator">
+    <meta property="og:description" content="Tweak a domain-warped noise shader in your browser and export the result as PNG or JPG.">
+    <meta property="og:image" content="https://holograthic.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Holograthic",
+            "url": "https://holograthic.com/",
+            "description": "Browser-based generator for iridescent, holographic backgrounds built on a WebGL fragment shader.",
+            "applicationCategory": "DesignApplication",
+            "browserRequirements": "Requires WebGL",
+            "operatingSystem": "Any",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+            }
+        }
+    </script>
 </head>
 <body>
 
@@ -30,7 +61,7 @@
 <section class="panel" aria-label="Shader controls">
     <div class="panel-head">
         <span>uniforms</span>
-        <span id="fps">—</span>
+        <span id="fps">-</span>
     </div>
 
     <div class="panel-body">
@@ -45,7 +76,7 @@
         <button class="btn btn-key" id="randomize">Randomize</button>
         <button class="btn" id="playpause">Pause</button>
         <button class="btn" id="savepng">Save PNG</button>
-        <button class="btn" id="savejpg">Save JPEG</button>
+        <button class="btn" id="savejpg">Save JPG</button>
     </div>
 </section>
 
@@ -53,7 +84,7 @@
 <div class="fallback" id="fallback">This browser could not start WebGL, so the shader can't run here.</div>
 
 <script data-goatcounter="https://rain.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+        async src="https://gc.zgo.at/count.js"></script>
 
 <script src="holo.min.js"></script>
 </body>
