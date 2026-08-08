@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Holograthic | Privacy</title>
+    <meta name="description" content="Privacy policy for Holograthic.">
+    <meta name="robots" content="noindex, follow">
+
+    <style>
+        @font-face{ font-family:'Syne'; src:url('fonts/syne-800.woff2') format('woff2');
+            font-weight:800; font-style:normal; font-display:swap; }
+        @font-face{ font-family:'IBM Plex Mono'; src:url('fonts/plex-mono-400.woff2') format('woff2');
+            font-weight:400; font-style:normal; font-display:swap; }
+
+        :root{
+            --ink:#EAECF5; --ink-dim:#8A90AB; --ink-faint:#565C77;
+            --accent:#B9A7FF; --hair:rgba(255,255,255,.10); --hair-lit:rgba(255,255,255,.22);
+            --display:'Syne','Trebuchet MS',system-ui,sans-serif;
+            --mono:'IBM Plex Mono',ui-monospace,'SF Mono',Menlo,monospace;
+            /* sampled directly from the shipped "Oil" palette */
+            --spectrum:linear-gradient(90deg,#1228a4 0%,#688aff 17%,#d5d4ed 33%,#edbd74 50%,#975b14 67%,#2a112c 83%,#1228a4 100%);
+        }
+        *{ box-sizing:border-box; }
+        html{ scroll-behavior:smooth; }
+        body{
+            margin:0; background:#05060B; color:var(--ink);
+            font-family:var(--mono); font-size:14px; line-height:1.75;
+            -webkit-font-smoothing:antialiased;
+        }
+        .wrap{ max-width:70ch; margin:0 auto; padding:0 28px 120px; }
+
+        /* --- top bar --- */
+        .bar{
+            position:sticky; top:0; z-index:5;
+            background:rgba(5,6,11,.82);
+            -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px);
+            border-bottom:1px solid var(--hair);
+        }
+        .bar-in{
+            max-width:70ch; margin:0 auto; padding:14px 28px;
+            display:flex; justify-content:space-between; align-items:center;
+        }
+        .back{
+            color:var(--ink-dim); text-decoration:none; font-size:11px;
+            letter-spacing:.14em; text-transform:uppercase; transition:color .16s;
+        }
+        .back:hover,.back:focus-visible{ color:var(--ink); }
+        .bar-in span{ font-size:10px; letter-spacing:.24em; text-transform:uppercase; color:var(--ink-faint); }
+
+        /* --- masthead --- */
+        header.top{ padding:76px 0 0; }
+        .rule{ height:2px; background:var(--spectrum); border-radius:2px; margin-bottom:34px; }
+        h1{
+            font-family:var(--display); font-weight:800;
+            font-size:clamp(40px,7vw,68px); line-height:.92; letter-spacing:-.035em; margin:0 0 18px;
+        }
+        .dateline{ font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-faint); margin:0; }
+
+        /* --- the honest summary --- */
+        .callout{
+            margin:44px 0 8px; padding:24px 26px;
+            border:1px solid var(--hair-lit); border-radius:4px;
+            background:rgba(255,255,255,.025);
+        }
+        .callout p{ margin:0; color:var(--ink); }
+        .callout p + p{ margin-top:12px; color:var(--ink-dim); font-size:13px; }
+
+        /* --- sections --- */
+        section{ margin-top:52px; }
+        h2{
+            font-family:var(--display); font-weight:600;
+            font-size:19px; letter-spacing:-.01em; margin:0 0 14px;
+            display:flex; align-items:baseline; gap:12px;
+        }
+        h2::before{
+            content:attr(data-n); font-family:var(--mono); font-weight:400;
+            font-size:11px; color:var(--accent); letter-spacing:.1em;
+        }
+        h3{ font-family:var(--display); font-weight:600; font-size:15px;
+            color:var(--ink); margin:30px 0 12px; letter-spacing:-.005em; }
+        p{ margin:0 0 14px; color:var(--ink-dim); }
+        p strong{ color:var(--ink); font-weight:500; }
+        ul{ margin:0 0 14px; padding-left:20px; color:var(--ink-dim); }
+        li{ margin-bottom:7px; }
+        li::marker{ color:var(--ink-faint); }
+        a{ color:var(--accent); text-decoration:none; border-bottom:1px solid rgba(185,167,255,.3); }
+        a:hover,a:focus-visible{ border-bottom-color:var(--accent); }
+        code{
+            font-size:12.5px; color:var(--ink); background:rgba(255,255,255,.06);
+            padding:1px 5px; border-radius:3px;
+        }
+
+        /* placeholders you must replace before publishing */
+        .fill{
+            color:#0B0B12; background:var(--accent); font-weight:500;
+            padding:1px 7px; border-radius:3px; white-space:nowrap; font-size:12.5px;
+        }
+
+        /* editor notes — DELETE these blocks before the page goes public */
+        .note{
+            margin:18px 0; padding:16px 18px; border-radius:4px;
+            border:1px dashed rgba(255,210,122,.36); background:rgba(255,210,122,.05);
+        }
+        .note b{
+            display:block; font-size:10px; letter-spacing:.2em; text-transform:uppercase;
+            color:#FFD27A; margin-bottom:9px; font-weight:500;
+        }
+        .note p{ margin:0 0 9px; color:#DCC79C; font-size:13px; }
+        .note p:last-child{ margin:0; }
+        .note a{ color:#FFD27A; border-bottom-color:rgba(255,210,122,.35); }
+        .note code{ background:rgba(255,210,122,.1); color:#F0DDB4; }
+
+        footer{
+            margin-top:80px; padding-top:26px; border-top:1px solid var(--hair);
+            font-size:11px; letter-spacing:.06em; color:var(--ink-faint);
+        }
+        footer a{ color:var(--ink-faint); border-bottom-color:transparent; }
+        footer a:hover{ color:var(--ink-dim); }
+
+        @media (max-width:640px){
+            .wrap,.bar-in{ padding-left:20px; padding-right:20px; }
+            header.top{ padding-top:48px; }
+            body{ font-size:13.5px; }
+        }
+        @media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } *{ transition:none !important; } }
+    </style>
+</head>
+<body>
+
+<nav class="bar">
+    <div class="bar-in">
+        <a class="back" href="index.html">&larr; Holograthic</a>
+        <span>Privacy</span>
+    </div>
+</nav>
+
+<div class="wrap">
+
+    <header class="top">
+        <div class="rule"></div>
+        <h1>Privacy</h1>
+        <p class="dateline">Effective 2026-08-08 &middot; holograthic.com</p>
+    </header>
+
+    <div class="callout">
+        <p><strong>The generator itself sends nothing anywhere.</strong> It draws in your browser, on your own hardware, and the images you export never leave your device.</p>
+        <p>Two other things do collect something: a privacy-focused analytics tool that sets no cookies and cannot identify you, and the advertisement, which is served by a third party and does set cookies. Only the advertising needs your consent, and the site works normally if you refuse it.</p>
+    </div>
+
+    <section>
+        <h2 data-n="01">What we collect directly</h2>
+        <p><strong>Nothing.</strong> This site has no sign-up, no login, no contact form, and no database of users. We do not ask for your name, email address, or any other personal information, and we hold no account that could identify you.</p>
+        <p>What the site does gather is described in section 03 (analytics) and section 06 (advertising). Neither involves you telling us anything.</p>
+    </section>
+
+    <section>
+        <h2 data-n="02">Images you create</h2>
+        <p>The generator runs entirely on your device using WebGL. When you adjust a setting, your browser recalculates the image locally on your graphics hardware.</p>
+        <p><strong>Your images are never uploaded.</strong> Choosing <em>Save PNG</em> or <em>Save JPEG</em> encodes the image in your browser and hands it straight to your downloads folder. No copy is sent anywhere, and we never see what you make.</p>
+    </section>
+
+    <section>
+        <h2 data-n="03">Analytics</h2>
+        <p>We use <strong>GoatCounter</strong> to count visits. It is an open-source analytics tool, and we use its hosted service, which runs on servers in Germany. It was chosen specifically because it does not identify visitors.</p>
+        <p>GoatCounter <strong>sets no cookies</strong> and creates no persistent identifier. For each page view it records:</p>
+        <ul>
+            <li>the page address you visited, and when;</li>
+            <li>the referring page or campaign, if any;</li>
+            <li>your browser name and version;</li>
+            <li>your operating system;</li>
+            <li>your country;</li>
+            <li>your screen size.</li>
+        </ul>
+        <p>These are stored as <strong>daily aggregate totals</strong> in separate tables with no way to link one to another. We can see that a page had a certain number of views in Firefox on a given day, and separately that some visits came from a 1920-pixel-wide screen &mdash; but not that those were the same visit. Only the computed result is kept, not the raw <code>User-Agent</code> header it came from.</p>
+        <p>To avoid counting one person twice in a day, GoatCounter derives a hash from your IP address, your browser string, and a salt that changes daily. <strong>Your IP address is never written to the database</strong> &mdash; the mapping is held in memory for at most eight hours, and because the salt rotates, the hash cannot be used to recognise you the following day or on any other site.</p>
+        <p>The lawful basis is our <strong>legitimate interest</strong> (GDPR Art. 6(1)(f)) in understanding roughly how many people use the site. GoatCounter honours the Do Not Track browser signal by default.</p>
+    </section>
+
+    <section>
+        <h2 data-n="04">Cookies and consent</h2>
+        <p><strong>We set no cookies of our own,</strong> and nothing is written to local storage or session storage. Your palette and slider settings live in memory only and are gone when you close the tab. The analytics described above sets no cookies either.</p>
+        <p>The advertisement is the exception. The ad network sets its own cookies on its own domains.</p>
+    </section>
+
+    <section>
+        <h2 data-n="05">Third-party requests</h2>
+        <p>Fonts are served from this site&rsquo;s own domain. We do not use a third-party font service, so <strong>no font provider receives your IP address</strong>.</p>
+        <p>The requests that do leave your browser are the analytics call described in section 03 and, if you have consented to it, the advertisement described in section 06. There are no embedded videos, social widgets, or third-party tracking pixels.</p>
+    </section>
+
+    <section>
+        <h2 data-n="06">Advertising</h2>
+        <p>This site displays a single advertisement served by <strong>Carbon Ads</strong> (CarbonAds.net, part of BuySellAds).</p>
+        <p>Your browser fetches the advertisement directly from Carbon&rsquo;s servers, so <strong>Carbon receives your IP address</strong> and the address of the page you are viewing.</p>
+        <p>Carbon&rsquo;s privacy policy states that its services may use cookies to collect non-personally-identifiable information in order to decide which advertisement to deliver. By Carbon&rsquo;s own account the cookie holds the type of operating system, the type of browser, which pages were viewed and when, and the approximate location of your internet provider. Carbon states it contains no name, address, phone number, email address, or anything else that identifies you personally.</p>
+        <p>Those cookies are set on Carbon&rsquo;s own domains &mdash; typically <code>carbonads.net</code> or <code>syndicateads.net</code> &mdash; and you can remove them through your browser&rsquo;s cookie settings. Carbon operates from the United States, so this information is transferred to and stored there.</p>
+        <p>We receive only aggregate impression and click counts, from which individual visitors cannot be identified. We do not choose, write, or endorse the content of the advertisements.</p>
+        <p>Carbon&rsquo;s full policy is at <a href="https://www.carbonads.net/privacy" rel="noopener">carbonads.net/privacy</a>, and privacy requests go to <a href="mailto:support@carbonads.net" rel="noopener">support@carbonads.net</a>.</p>
+    </section>
+
+    <section>
+        <h2 data-n="07">Hosting</h2>
+        <p>The site is hosted by AWS. Like almost all web servers, the host may keep short-lived technical logs &mdash; typically IP address, timestamp, and requested file &mdash; for security and to keep the service running. These logs are controlled by the host under its own privacy policy: <a href="https://aws.amazon.com/privacy/" rel="noopener">https://aws.amazon.com/privacy/</a>.</p>
+        <p>We do not read, analyse, export, or retain those logs ourselves.</p>
+    </section>
+
+    <section>
+        <h2 data-n="08">Your rights</h2>
+        <p>Under the GDPR you have the right to access, correct, delete, restrict, or object to the processing of your personal data, the right to data portability, and the right to lodge a complaint with a supervisory authority.</p>
+        <p>There is an honest limit on what we can do for you here. We hold <strong>no account and no identifier for you</strong>, and the analytics data is aggregated to the point where no row belongs to any particular person. That means we usually cannot find &ldquo;your&rdquo; data in order to show or erase it &mdash; not as a refusal, but because it does not exist in a form that could be picked out. Where a controller genuinely cannot identify a data subject, GDPR Art. 11 recognises this.</p>
+        <p>You can object to the analytics at any time by enabling Do Not Track in your browser, which GoatCounter honours.</p>
+        <p>For data held by the ad network, contact Carbon directly using the address in section 06.</p>
+    </section>
+
+    <section>
+        <h2 data-n="09">Children</h2>
+        <p>This site is a design tool intended for a general audience and is not directed at children. We do not knowingly collect personal data from anyone under 16, and the analytics we use cannot identify the age of a visitor.</p>
+    </section>
+
+    <section>
+        <h2 data-n="10">Changes</h2>
+        <p>If what the site collects changes &mdash; a different analytics tool, a different ad network, or anything that identifies visitors individually &mdash; this page will be updated before that change goes live, and the effective date above will change with it.</p>
+    </section>
+
+    <section>
+        <h2 data-n="11">Contact</h2>
+        <p>Questions about this policy: ryuroman@himnerom.com.</p>
+        <p>The data controller for this site is Himnerom, France.</p>
+    </section>
+
+    <footer>
+        <a href="index.html">Back to the generator</a> &nbsp;&middot;&nbsp; <a href="terms.html">Terms of Use</a>
+    </footer>
+
+</div>
+</body>
+</html>
