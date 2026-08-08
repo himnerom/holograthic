@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Holographic | Terms of Use</title>
+    <meta name="description" content="Terms of use for Holograthic.">
+    <meta name="robots" content="noindex, follow">
+
+    <style>
+        @font-face{ font-family:'Syne'; src:url('fonts/syne-800.woff2') format('woff2');
+            font-weight:800; font-style:normal; font-display:swap; }
+        @font-face{ font-family:'IBM Plex Mono'; src:url('fonts/plex-mono-400.woff2') format('woff2');
+            font-weight:400; font-style:normal; font-display:swap; }
+        :root{
+            --ink:#EAECF5; --ink-dim:#8A90AB; --ink-faint:#565C77;
+            --accent:#B9A7FF; --hair:rgba(255,255,255,.10); --hair-lit:rgba(255,255,255,.22);
+            --display:'Syne','Trebuchet MS',system-ui,sans-serif;
+            --mono:'IBM Plex Mono',ui-monospace,'SF Mono',Menlo,monospace;
+            /* sampled directly from the shipped "Oil" palette */
+            --spectrum:linear-gradient(90deg,#1228a4 0%,#688aff 17%,#d5d4ed 33%,#edbd74 50%,#975b14 67%,#2a112c 83%,#1228a4 100%);
+        }
+        *{ box-sizing:border-box; }
+        html{ scroll-behavior:smooth; }
+        body{
+            margin:0; background:#05060B; color:var(--ink);
+            font-family:var(--mono); font-size:14px; line-height:1.75;
+            -webkit-font-smoothing:antialiased;
+        }
+        .wrap{ max-width:70ch; margin:0 auto; padding:0 28px 120px; }
+
+        /* --- top bar --- */
+        .bar{
+            position:sticky; top:0; z-index:5;
+            background:rgba(5,6,11,.82);
+            -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px);
+            border-bottom:1px solid var(--hair);
+        }
+        .bar-in{
+            max-width:70ch; margin:0 auto; padding:14px 28px;
+            display:flex; justify-content:space-between; align-items:center;
+        }
+        .back{
+            color:var(--ink-dim); text-decoration:none; font-size:11px;
+            letter-spacing:.14em; text-transform:uppercase; transition:color .16s;
+        }
+        .back:hover,.back:focus-visible{ color:var(--ink); }
+        .bar-in span{ font-size:10px; letter-spacing:.24em; text-transform:uppercase; color:var(--ink-faint); }
+
+        /* --- masthead --- */
+        header.top{ padding:76px 0 0; }
+        .rule{ height:2px; background:var(--spectrum); border-radius:2px; margin-bottom:34px; }
+        h1{
+            font-family:var(--display); font-weight:800;
+            font-size:clamp(40px,7vw,68px); line-height:.92; letter-spacing:-.035em; margin:0 0 18px;
+        }
+        .dateline{ font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-faint); margin:0; }
+
+        /* --- the honest summary --- */
+        .callout{
+            margin:44px 0 8px; padding:24px 26px;
+            border:1px solid var(--hair-lit); border-radius:4px;
+            background:rgba(255,255,255,.025);
+        }
+        .callout p{ margin:0; color:var(--ink); }
+        .callout p + p{ margin-top:12px; color:var(--ink-dim); font-size:13px; }
+
+        /* --- sections --- */
+        section{ margin-top:52px; }
+        h2{
+            font-family:var(--display); font-weight:600;
+            font-size:19px; letter-spacing:-.01em; margin:0 0 14px;
+            display:flex; align-items:baseline; gap:12px;
+        }
+        h2::before{
+            content:attr(data-n); font-family:var(--mono); font-weight:400;
+            font-size:11px; color:var(--accent); letter-spacing:.1em;
+        }
+        h3{ font-family:var(--display); font-weight:600; font-size:15px;
+            color:var(--ink); margin:30px 0 12px; letter-spacing:-.005em; }
+        p{ margin:0 0 14px; color:var(--ink-dim); }
+        p strong{ color:var(--ink); font-weight:500; }
+        ul{ margin:0 0 14px; padding-left:20px; color:var(--ink-dim); }
+        li{ margin-bottom:7px; }
+        li::marker{ color:var(--ink-faint); }
+        a{ color:var(--accent); text-decoration:none; border-bottom:1px solid rgba(185,167,255,.3); }
+        a:hover,a:focus-visible{ border-bottom-color:var(--accent); }
+        code{
+            font-size:12.5px; color:var(--ink); background:rgba(255,255,255,.06);
+            padding:1px 5px; border-radius:3px;
+        }
+
+        /* placeholders you must replace before publishing */
+        .fill{
+            color:#0B0B12; background:var(--accent); font-weight:500;
+            padding:1px 7px; border-radius:3px; white-space:nowrap; font-size:12.5px;
+        }
+
+        /* editor notes — DELETE these blocks before the page goes public */
+        .note{
+            margin:18px 0; padding:16px 18px; border-radius:4px;
+            border:1px dashed rgba(255,210,122,.36); background:rgba(255,210,122,.05);
+        }
+        .note b{
+            display:block; font-size:10px; letter-spacing:.2em; text-transform:uppercase;
+            color:#FFD27A; margin-bottom:9px; font-weight:500;
+        }
+        .note p{ margin:0 0 9px; color:#DCC79C; font-size:13px; }
+        .note p:last-child{ margin:0; }
+        .note a{ color:#FFD27A; border-bottom-color:rgba(255,210,122,.35); }
+        .note code{ background:rgba(255,210,122,.1); color:#F0DDB4; }
+
+        footer{
+            margin-top:80px; padding-top:26px; border-top:1px solid var(--hair);
+            font-size:11px; letter-spacing:.06em; color:var(--ink-faint);
+        }
+        footer a{ color:var(--ink-faint); border-bottom-color:transparent; }
+        footer a:hover{ color:var(--ink-dim); }
+
+        @media (max-width:640px){
+            .wrap,.bar-in{ padding-left:20px; padding-right:20px; }
+            header.top{ padding-top:48px; }
+            body{ font-size:13.5px; }
+        }
+        @media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } *{ transition:none !important; } }
+    </style></head>
+<body>
+
+<nav class="bar">
+    <div class="bar-in">
+        <a class="back" href="index.html">&larr; Holograthic</a>
+        <span>Terms</span>
+    </div>
+</nav>
+
+<div class="wrap">
+
+    <header class="top">
+        <div class="rule"></div>
+        <h1>Terms of Use</h1>
+        <p class="dateline">Effective 2026-08-08 &middot; holograthic.com</p>
+    </header>
+
+    <div class="callout">
+        <p><strong>Use the tool, keep what you make.</strong> This is a free browser-based generator. We claim no ownership of the images you export, and you may use them commercially without asking or crediting anyone.</p>
+        <p>The rest is the usual: what we promise (very little), what we ask of you (not much), and who is responsible if something breaks.</p>
+    </div>
+
+    <section>
+        <h2 data-n="01">Agreeing to these terms</h2>
+        <p>These terms are an agreement between you and Himnerom covering your use of holograthic.com and everything on it. By loading the site you accept them. If you do not, please close the tab &mdash; there is nothing else you need to do, since we hold no account or data for you.</p>
+    </section>
+
+    <section>
+        <h2 data-n="02">What the service is</h2>
+        <p>The site is a free tool that draws animated gradients using a WebGL shader running on your own device. There is no account, no sign-up, no payment, and no server-side processing of anything you make.</p>
+        <p>It is offered <strong>as a convenience, not as a commitment</strong>. We may change how it works, add or remove palettes and controls, or take the whole thing offline, at any time and without notice. Nothing here obliges us to keep the site running, to maintain it, or to preserve any particular feature.</p>
+        <p>The tool needs WebGL and a reasonably current browser. On hardware that cannot run it, the page will say so and nothing will render. That is a limitation of the technology, not a fault we undertake to fix.</p>
+    </section>
+
+    <section>
+        <h2 data-n="03">The images you make</h2>
+        <p><strong>They are yours. We claim nothing.</strong></p>
+        <p>To the fullest extent that any rights in an exported image could belong to us, we grant you a perpetual, worldwide, irrevocable, royalty-free licence to use, copy, modify, publish, sell, and distribute it, for any purpose including commercial ones. No attribution is required, no permission needs to be sought, and no licence fee is payable. You may use the output in client work, in products you sell, and in anything else lawful.</p>
+    </section>
+
+    <section>
+        <h2 data-n="04">The site itself</h2>
+        <p>The shader, the source code, the interface design, the palette definitions, and the wording on these pages belong to Himnerom or to the people we license them from. The permissive licence in section 03 covers <em>images you generate</em>, and nothing else.</p>
+        <p>The code is made available under all rights reserved.</p>
+    </section>
+
+    <section>
+        <h2 data-n="05">How you may use the site</h2>
+        <p>Use it for whatever you like, within the law. Please do not:</p>
+        <ul>
+            <li>attack, overload, or attempt to gain unauthorised access to the site or its host;</li>
+            <li>scrape or automate it at a volume that degrades it for other people;</li>
+            <li>remove or obscure any notice of authorship or licensing;</li>
+            <li>present the tool as your own product or resell access to it;</li>
+            <li>use images from it in material that is unlawful, defamatory, or infringes someone else&rsquo;s rights.</li>
+        </ul>
+        <p>If you break these terms, we may block your access. Given that we hold no accounts, that is a blunt instrument and rarely a practical one &mdash; but it is reserved.</p>
+    </section>
+
+    <section>
+        <h2 data-n="06">Advertising</h2>
+        <p>Advertising may run on this site. If it does, the advertisements will be supplied by a third-party network, and their content will not be chosen, written, or endorsed by us.</p>
+        <p>We are not responsible for the products, services, or claims of any advertiser, and any dealing you have with one is between you and them.</p>
+    </section>
+
+    <section>
+        <h2 data-n="07">No warranty</h2>
+        <p>The site is provided <strong>as is</strong> and <strong>as available</strong>, without warranties of any kind, whether express or implied. In particular, we do not warrant that it will be uninterrupted, error-free, secure, compatible with your device, or fit for any particular purpose, nor that any image it produces will meet your requirements.</p>
+        <p>Nothing in this section affects rights you have under mandatory consumer protection law that cannot be excluded by agreement.</p>
+    </section>
+
+    <section>
+        <h2 data-n="08">Liability</h2>
+        <p>To the extent permitted by law, we are not liable for indirect or consequential loss arising from your use of the site &mdash; including lost profit, lost work, lost data, or business interruption.</p>
+    </section>
+
+    <section>
+        <h2 data-n="09">Changes</h2>
+        <p>We may revise these terms. The effective date at the top will change when we do, and continuing to use the site afterward means you accept the revision. For anything material &mdash; a change to the licence in section 03, or the introduction of advertising &mdash; we will say so on the page rather than change it quietly.</p>
+    </section>
+
+    <section>
+        <h2 data-n="10">Law and disputes</h2>
+        <p>These terms are governed by French law, and the courts of Paris have jurisdiction.</p>
+        <p>If you use the site as a consumer resident elsewhere in the EU, this does not deprive you of the protection of mandatory rules of your own country&rsquo;s law, and you may bring proceedings there.</p>
+        <p>If you have a complaint, please write to ryuroman@himnerom.com first. Most things are quicker to settle that way.</p>
+    </section>
+
+    <section>
+        <h2 data-n="11">Legal mentions</h2>
+        <p>Publisher: Himnerom, France.</p>
+        <p>Host: AWS.</p>
+    </section>
+
+    <footer>
+        <a href="/">Back to the generator</a>
+    </footer>
+
+</div>
+</body>
+</html>

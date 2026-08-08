@@ -6,22 +6,33 @@
     <title>Holograthic | Iridescent backgrounds</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;800&family=IBM+Plex+Mono:wght@400;500&display=swap"
-          rel="stylesheet">
+    <style>
+        @font-face{ font-family:'Syne'; src:url('fonts/syne-600.woff2') format('woff2');
+            font-weight:600; font-style:normal; font-display:swap; }
+        @font-face{ font-family:'Syne'; src:url('fonts/syne-800.woff2') format('woff2');
+            font-weight:800; font-style:normal; font-display:swap; }
+        @font-face{ font-family:'IBM Plex Mono'; src:url('fonts/plex-mono-400.woff2') format('woff2');
+            font-weight:400; font-style:normal; font-display:swap; }
+        @font-face{ font-family:'IBM Plex Mono'; src:url('fonts/plex-mono-500.woff2') format('woff2');
+            font-weight:500; font-style:normal; font-display:swap; }
+    </style>
+
     <link rel="stylesheet" href="holo.min.css">
 
     <link rel="apple-touch-icon" href="icons/icon-192.png">
     <link rel="icon" type="image/png" href="favicon.png"/>
     <link rel="manifest" href="manifest.json">
 
-    <meta name="description" content="Free WebGL holographic background generator. Tweak domain-warped noise and cosine palettes in real time, then export as PNG or JPG.">
+    <meta name="description"
+          content="Free WebGL holographic background generator. Tweak domain-warped noise and cosine palettes in real time, then export as PNG or JPG.">
     <link rel="canonical" href="https://holograthic.com/">
     <meta name="theme-color" content="#7987F0">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://holograthic.com/">
     <meta property="og:title" content="Holograthic | Iridescent background generator">
-    <meta property="og:description" content="Tweak a domain-warped noise shader in your browser and export the result as PNG or JPG.">
+    <meta property="og:description"
+          content="Tweak a domain-warped noise shader in your browser and export the result as PNG or JPG.">
     <meta property="og:image" content="https://holograthic.com/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -54,14 +65,16 @@
 <header class="masthead">
     <p class="eyebrow">WebGL · fragment shader</p>
     <h1>Holograthic</h1>
-    <p>Domain-warped value noise read through a cosine palette. Adjust the uniforms and the surface re-forms in real
-        time.</p>
+    <p>Domain-warped value noise read through a cosine palette. Adjust the uniforms and the surface re-forms in real time.</p>
+    <nav class="legal" aria-label="Legal">
+        <a href="terms.html">Terms</a>
+    </nav>
 </header>
 
 <section class="panel" aria-label="Shader controls">
     <div class="panel-head">
         <span>uniforms</span>
-        <span id="fps">-</span>
+        <span id="fps">—</span>
     </div>
 
     <div class="panel-body">
@@ -76,16 +89,14 @@
         <button class="btn btn-key" id="randomize">Randomize</button>
         <button class="btn" id="playpause">Pause</button>
         <button class="btn" id="savepng">Save PNG</button>
-        <button class="btn" id="savejpg">Save JPG</button>
+        <button class="btn" id="savejpg">Save JPEG</button>
+        <button class="btn btn-wide" id="fullscreen" aria-pressed="false">Fullscreen</button>
     </div>
 </section>
 
+<div class="hint" id="hint"></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <div class="fallback" id="fallback">This browser could not start WebGL, so the shader can't run here.</div>
-
-<script data-goatcounter="https://rain.goatcounter.com/count"
-        async src="https://gc.zgo.at/count.js"></script>
-
 <script src="holo.min.js"></script>
 </body>
 </html>
