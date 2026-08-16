@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://holograthic.com/</loc>
-        <lastmod>2026-08-08</lastmod>
+        <lastmod>2026-08-16</lastmod>
+    </url>
+
+    <url>
+        <loc>https://holograthic.com/terms.html</loc>
+        <lastmod>2026-08-16</lastmod>
     </url>
 </urlset>
